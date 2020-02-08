@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { Link } from 'react-router-dom';
+import logo from '../static/images/glasgow_food_tour_logo.png';
 
 
 //import { Route, Redirect } from 'react-router-dom';
@@ -45,27 +46,18 @@ class NavbarMenu extends React.Component {
         return (
             <div>
                 <Navbar bg="white" expand="lg" fixed="top">
-                    <Navbar.Brand href="/index"> <img src='' /></Navbar.Brand>
+                    <Navbar.Brand href="/"><img src={logo} width="45%;"></img></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Link to="/jobList" className="btn btn-light" >Discover offers in your area</Link>
-                            &nbsp;&nbsp;
-                    <Link to="/newApp" className="btn btn-light" >Are you a company?</Link>
-                            &nbsp;&nbsp;
-                    <Link to="/TBC" className="btn btn-light">Your opinion is important</Link>
-                    &nbsp;&nbsp;
+                        
 
                         </Nav>
                         
                         <Form inline>
-                            <Nav.Link href="#">
-                                <Badge badgeContent={4} color="secondary">
-                                    <NotificationsIcon />
-                                </Badge>
-                            </Nav.Link>
+                            
 
-
+                
                             <NavDropdown title={sessionStorage.getItem('userName')} id="basic-nav-dropdown" style={links_style}>
 
                                 <NavDropdown.Item href="#action/3.1"> <i class="material-icons">

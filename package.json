@@ -19,6 +19,7 @@
     "bootstrap": "^4.4.1",
     "css-loader": "^3.4.2",
     "file-loader": "^5.0.2",
+    "google-maps-react": "^2.0.2",
     "history": "^4.10.1",
     "install": "^0.13.0",
     "jquery": "^3.4.1",

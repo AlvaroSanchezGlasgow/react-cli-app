@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { Link } from 'react-router-dom';
-import logo from '../static/images/glasgow_food_tour_logo.png';
+import logo from '../static/images/logo_square.png';
 
 
 //import { Route, Redirect } from 'react-router-dom';
@@ -23,8 +23,7 @@ const links_style = {
 }
 
 const buttonStyle = {
-    backgroundColor: '#de7008',
-    borderColor: '#de7008'
+    
 
 }
 
@@ -34,10 +33,8 @@ const styleForm = {
 }
 
 const imgStyle = {
-    width : '40%',
-    border: 'solid 1 px',
-    paddingRight: '20px',
-    borderColor: 'black'
+    width : '30%',
+  
 }
 
 class NavbarMenu extends React.Component {
@@ -49,31 +46,41 @@ class NavbarMenu extends React.Component {
         return (
             <div>
                 <Navbar bg="white" expand="lg" fixed="top" >
-                    <Navbar.Brand href="/"><img src={logo} style={imgStyle}></img>
-                    <a class="btn btn-primary" style={buttonStyle} href="https://theglasgowfoodtour.com">Visit our Blog</a>
+                    <Navbar.Brand href="/">
+                        <img src={logo} style={imgStyle} className="d-inline-block align-top" />
+                   
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
-                          
-                        </Nav>
-                        <Form inline>
-                            <NavDropdown title={sessionStorage.getItem('userName')} id="basic-nav-dropdown" style={links_style}>
+                    <Form inline>
+                        <NavDropdown title={sessionStorage.getItem('userName')} id="basic-nav-dropdown" style={links_style}>
                             <NavDropdown.Item>Glasgow - West End</NavDropdown.Item>
                                  <NavDropdown.Item href="#action/3.1"> <i class="material-icons">
                                     account_circle
                                 </i>My Profile</NavDropdown.Item>
                                 
-
+                                <NavDropdown.Item href="/">My Favourites</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="/login">Log Out</NavDropdown.Item>
-                            </NavDropdown>
+                        </NavDropdown>
                         </Form>
-                     
+                    </Navbar>
+  <br />
+                <center>
+                <Navbar bg="white" expand="lg" >
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="mr-auto">
+                        
+                        <Nav.Link href="https://theglasgowfoodtour.com" target="_Blank">Visit our Blog</Nav.Link>
+                        <Nav.Link href="mailto:contact@theglasgowapp.com?subject=Enquiries">Let´s keep in touch</Nav.Link>
+                        
+                        </Nav>
+                
+                       
                     </Navbar.Collapse>
                 </Navbar>
+                </center>
                
-                <hr></hr>
+                
             </div>
 
 
